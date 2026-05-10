@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Wisdom Atlas API Ecosystem Guide for eCNH: compare social and AI APIs, free tiers, pricing, and integrations."
+    />
+    <title>Wisdom Atlas · eCNH API Ecosystem Guide</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="navbar" aria-label="Main navigation">
+        <a class="brand" href="#home" aria-label="Wisdom Atlas home">
+          <span class="brand-mark">◇</span>
+          <span>Wisdom Atlas</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          <span class="sr-only">Toggle navigation</span>
+          ☰
+        </button>
+        <ul id="nav-links" class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#quotes">Wisdom Quotes</a></li>
+          <li><a href="#ecnh">eCNH</a></li>
+          <li><a href="#mentor">AI Mentor</a></li>
+          <li><a href="#insights">Industry Insights</a></li>
+          <li><a href="#guide" aria-current="page">API Guide</a></li>
+        </ul>
+        <button id="language-toggle" class="language-toggle" type="button" aria-label="Switch language">
+          🇬🇧 EN
+        </button>
+      </nav>
+
+      <section id="home" class="hero">
+        <p class="eyebrow" data-i18n="eyebrow">API Ecosystem Guide</p>
+        <h1 data-i18n="heroTitle">Global APIs × eCNH</h1>
+        <p class="hero-copy" data-i18n="heroCopy">
+          Complete guide to Top 10 Social APIs + Top 10 AI APIs. What's free? How are they priced?
+          Which are best for eCNH?
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#guide" data-i18n="exploreGuide">Explore guide</a>
+          <a class="button secondary" href="#stack" data-i18n="viewStack">View eCNH stack</a>
+        </div>
+      </section>
+    </header>
+
+    <main>
+      <section id="guide" class="dashboard" aria-labelledby="guide-title">
+        <div class="stats-grid" aria-label="API summary statistics">
+          <article class="stat-card">
+            <strong id="social-count">0</strong>
+            <span data-i18n="socialApis">Social APIs</span>
+          </article>
+          <article class="stat-card">
+            <strong id="ai-count">0</strong>
+            <span data-i18n="aiApis">AI APIs</span>
+          </article>
+          <article class="stat-card">
+            <strong id="free-count">0</strong>
+            <span data-i18n="freeTier">Have Free Tier</span>
+          </article>
+          <article class="stat-card accent">
+            <strong id="best-fit-count">0</strong>
+            <span data-i18n="bestFit">Best Fit eCNH</span>
+          </article>
+        </div>
+
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow" data-i18n="compareEyebrow">Decision dashboard</p>
+            <h2 id="guide-title" data-i18n="compareTitle">API ecosystem comparison</h2>
+          </div>
+          <label class="search-box">
+            <span class="sr-only" data-i18n="searchLabel">Search APIs</span>
+            <input id="search-input" type="search" placeholder="Search..." autocomplete="off" />
+          </label>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="API categories">
+          <button class="tab is-active" type="button" data-filter="all" role="tab" aria-selected="true" data-i18n="all">All</button>
+          <button class="tab" type="button" data-filter="social" role="tab" aria-selected="false" data-i18n="socialTab">💬 Social APIs</button>
+          <button class="tab" type="button" data-filter="ai" role="tab" aria-selected="false" data-i18n="aiTab">🤖 AI APIs</button>
+          <button class="tab" type="button" data-filter="best" role="tab" aria-selected="false">✅</button>
+          <button class="tab" type="button" data-filter="good" role="tab" aria-selected="false">⚡</button>
+          <button class="tab" type="button" data-filter="low" role="tab" aria-selected="false">➖</button>
+        </div>
+
+        <div id="api-grid" class="api-grid" aria-live="polite"></div>
+        <p id="empty-state" class="empty-state" hidden data-i18n="emptyState">No APIs match your search.</p>
+      </section>
+
+      <section class="comparison-section" aria-labelledby="social-table-title">
+        <h2 id="social-table-title" data-i18n="socialTable">📊 Social API Comparison Table</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th data-i18n="platform">Platform</th>
+                <th data-i18n="free">Free?</th>
+                <th data-i18n="freeLimit">Free Limit</th>
+                <th data-i18n="startingPrice">Starting Price</th>
+                <th data-i18n="ecnhFit">eCNH Fit</th>
+              </tr>
+            </thead>
+            <tbody id="social-table-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="comparison-section" aria-labelledby="ai-table-title">
+        <h2 id="ai-table-title" data-i18n="aiTable">🤖 AI API Comparison Table</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th data-i18n="platform">Platform</th>
+                <th data-i18n="free">Free?</th>
+                <th data-i18n="freeLimit">Free Limit</th>
+                <th data-i18n="startingPrice">Starting Price</th>
+                <th data-i18n="ecnhFit">eCNH Fit</th>
+              </tr>
+            </thead>
+            <tbody id="ai-table-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="stack" class="stack-section" aria-labelledby="stack-title">
+        <div class="section-heading compact">
+          <div>
+            <p class="eyebrow" data-i18n="stackEyebrow">eCNH Stack</p>
+            <h2 id="stack-title" data-i18n="stackTitle">Recommended launch architecture</h2>
+          </div>
+        </div>
+        <div id="stack-grid" class="stack-grid"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p data-i18n="footerNote">
+        Data sourced from official platform docs (2025-2026) · Prices may change, verify at official sites.
+      </p>
+    </footer>
+
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>
